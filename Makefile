@@ -16,3 +16,7 @@ container:
 
 containerd:
 	docker run -it --rm -d -v $(volumeName):/var/lib/postgresql/data $(tag)
+
+clean:
+	docker volume rm -f $(volumeName)
+	docker image rm -f $(tag)
